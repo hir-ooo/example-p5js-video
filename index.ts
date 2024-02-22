@@ -4,7 +4,6 @@ import {
 	HiroApp,
 	HiroAppOptions,
 	NumberController,
-	TextController,
 } from '@hiro-sdk/core';
 
 // This example is based on the medium article by Keno Leon "Making 2D art in Javascript !"
@@ -12,9 +11,9 @@ import {
 
 
 const options: HiroAppOptions = {
-    	title: 'P5js Ex 2',
-    	author: '#f57e56',
-    	description: 'Some description or instructions about your artwork.',
+	title: 'P5js Ex 2',
+	author: '#f57e56',
+	description: 'Some description or instructions about your artwork.',
 };
 
 const app = new HiroApp(options);
@@ -26,13 +25,6 @@ const bgColor = new ColorController('#2908fa', 'color-NjcUr',{
 
 const lineColors = new ColorController('#ff00a6', 'color-NjcUr', {
 	label: 'Line Color'
-});
-
-const textController = new TextController('Unleash Your Creativity!','short-text-ZgZSt' ,{
-	label: 'Text',
-	onChange: (text: string) => {
-		document.getElementById('some-text')!.innerHTML = text;
-	},
 });
 
 const lineSpace = new NumberController(10,'slider-Gw2hv', {
@@ -67,12 +59,13 @@ const noiseStrength = new NumberController(30, "perlin-noise-s", {
 	slider: true,
 });
 
+
 let sketch = (p) => {
 	let canvas;
 	let video;
 
-	const w = p.windowWidth;
-	const h = p.windowHeight;
+	const w = 640*1.5;
+	const h = 470*1.5;
 
 	p.setup = () => {
 		canvas = p.createCanvas(w, h);
@@ -117,4 +110,6 @@ let sketch = (p) => {
 	};
 };
 
-new p5(sketch);
+new p5(sketch, 'container');
+
+

@@ -1,4 +1,4 @@
-# P5js Ex 2
+# Example P5 Video
 
 This project was scaffolded by Hiro CLI.
 
